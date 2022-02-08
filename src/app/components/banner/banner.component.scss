@@ -1,0 +1,20 @@
+@use '../../scss/colors';
+
+.banner {
+    width: 80%;
+    height: 5rem;
+    color: colors.$color-white;
+    background-color: colors.$color-text;
+    background-image: url('../../../assets/images/banner-background.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    min-height: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.3rem;
+    p {
+      padding-left: 1rem;
+      text-transform: capitalize;
+    }
+    
+  }
