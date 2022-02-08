@@ -1,0 +1,24 @@
+@use '../../scss/colors';
+
+header {
+    position: sticky;
+    top: 0;
+    img {
+      margin-left: 2rem;
+    }
+    #logo {
+      padding-top: 0.3rem;
+    }
+    a {
+        text-decoration: none;
+        color: colors.$color-text;
+    }
+    align-items: center;
+    background-color: colors.$color-header-background;
+    box-shadow: 0 0.3rem 0.4rem colors.$color-card-shadow;
+}
+
+
+  .active-header {
+    font-weight: bold;
+  }
