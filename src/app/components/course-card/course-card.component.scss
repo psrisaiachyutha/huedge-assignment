@@ -1,0 +1,41 @@
+@use '../../scss/colors';
+
+.flex-flow-c {
+  flex-direction: column;
+}
+.flex-flow-r {
+  flex-direction: row;
+}
+.course-card {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    span {
+      display: flex;
+      max-width: 10rem;
+      font-size: 0.7rem;
+    }
+    border: 1px solid colors.$color-card-border;
+    box-shadow: 0 0.3rem 0.4rem colors.$color-card-shadow;
+    margin-bottom: 1rem;
+}
+
+
+.small-btn {
+    padding: 0.2rem;
+    background-color: colors.$color-orange;
+    color: colors.$color-white;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    border-radius: 0.2rem;
+  }
+  
+  .large-btn {
+    background-color: colors.$color-orange;
+    padding: 0.3rem 0.2rem;
+    border-radius: 0.2rem;
+    color: colors.$color-white;
+    border-color: transparent;
+  }

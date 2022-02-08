@@ -1,7 +1,10 @@
 @use '../../scss/colors';
 
 .banner {
-    width: 80%;
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 0.5rem;
     height: 5rem;
     color: colors.$color-white;
     background-color: colors.$color-text;

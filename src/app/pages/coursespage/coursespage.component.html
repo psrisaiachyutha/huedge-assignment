@@ -1,0 +1,97 @@
+<app-banner [data]="'Discover latest courses on angular'"></app-banner>
+
+<div class="coursepage-container">
+    <div class="d-flex mg-b-1rem">
+        <main>
+            <div class="mg-b-1rem">
+                <span class="font-bold">All Courses</span> 
+                <select name="courseprice" id="courseprice" (change)="sortAllCourses($event)" class="float-right">
+                    <option value="price">Course Price</option>
+                    <option value="lowToHigh">Low To High</option>
+                    <option value="highToLow">High To Low</option>
+                </select>
+            </div>
+            <div class="card-container mt-4" *ngIf="allCourses && searchValue.length === 0">
+                <!-- all cards are placed here-->
+                <app-course-card *ngFor="let course of displayList; trackBy: courseTracking"
+                    [courseId]="course.id"  
+                    [courseTitle]="course.title"
+                    [tags]="course.tags"
+                    [courseCreater]="course.author"
+                    [isInCart]="false"
+                    [originalPrice]="course.actual_price"
+                    [discount]="course.discounted_price"
+                    [showStars]="true"
+                    [showDiscount]="true"
+                    [showDelete]="false"
+                    [showArrow]="true"
+                    [arrowLink]="'/detailcourse/' + course.id"
+                    [showMoveToWishListText]="false"
+                    [showAddToCart]="true"
+                    [addToCartFunction]="addToCart"
+                    [addToWishListFunction]="addToWishList"
+                    [deleteFromListFunction]="deleteFromWishList"
+                ></app-course-card>
+            </div>
+            <div class="card-container mt-4" *ngIf="searchList && searchValue.length > 0">
+                <!-- all cards for seach result-->
+                <app-course-card *ngFor="let course of searchList"
+                    [courseId]="course.id"  
+                    [courseTitle]="course.title"
+                    [tags]="course.tags"
+                    [courseCreater]="course.author"
+                    [isInCart]="false"
+                    [originalPrice]="course.actual_price"
+                    [discount]="course.discounted_price"
+                    [showStars]="true"
+                    [showDiscount]="true"
+                    [showDelete]="false"
+                    [showArrow]="true"
+                    [arrowLink]="'/detailcourse/' + course.id"
+                    [showMoveToWishListText]="false"
+                    [showAddToCart]="true"
+                    [addToCartFunction]="addToCart"
+                    [addToWishListFunction]="addToWishList"
+                    [deleteFromListFunction]="deleteFromWishList"
+                ></app-course-card>
+            </div>
+        </main>
+        <aside class="hide-when-screen-small">
+            <div class="mg-b-1rem">
+                <form action="#" class="d-flex">
+                    <input type="text" placeholder="Search here" (keyup)="search($event)">
+                    <img src="../../assets/images/Search.svg" alt="search" id="search" >
+                </form>
+            </div>
+              <div class="cart-details mt-4">
+                
+                <p class="text-align-center">Your Cart Details</p>
+                <hr>
+                <div *ngIf="!cartList" class="mt-2 mb-1">
+                    <p>Your cart is empty rightnow please add courses in the cart from the list</p>
+                </div>
+                <div class="mb-3 shadow" *ngFor="let course of  cartList">
+                    <div class="d-flex pt-3">
+                        <img src="../../assets/images/course-img.svg" alt="">
+                        <p class="fs-small">{{ course.title }}</p>
+                    </div>
+                    <p class="text-align-right fs-small"><strong> Rs {{ calculateDiscount(course.actual_price,course.discounted_price) }}/-</strong></p>
+                </div>
+                <hr>
+                <hr class="mg-t-5rem">
+                <div class="d-flex fs-small justify-content-space-between">
+                    <p>Total Cart Value <br> <strong>Rs {{ cartAmount }}/-</strong></p>
+                    <p class="text-color-orange" routerLink="/cart">GO TO CHECKOUT</p>
+                </div>
+            </div> 
+        </aside>
+    </div>
+    <div class="pagination fs-small d-flex">
+        <img src="../../assets/images/left-arrow.svg" alt="left arrow" (click)="makeDisplayList(currentPage-1)">
+        <!-- <span class="active">1</span>
+        <span>2</span> -->
+        <span class="pagination-buttons" [class.bg-orange]="pageNumber === currentPage" *ngFor="let  pageNumber of paginationIndexes" (click)="makeDisplayList(pageNumber)">{{pageNumber}}</span>
+        <img src="../../assets/images/right-arrow.svg" alt="right arrow" (click)="makeDisplayList(currentPage + 1)">
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="course-card">
+    <img src="../../../assets/images/course-img.svg" alt="course picture">
+    <span class="flex-flow-c">
+        <strong> {{ courseTitle }} </strong>
+           <span class="d-flex flex-flow-r">
+                <span class="small-btn" *ngFor="let tag of tags">{{ tag }}</span>
+           </span>
+    </span>
+    <span>{{courseCreater}}</span>
+    <ng-container *ngIf="isInCart && showStars"><img (click)="deleteFromListFunction(courseId);"  src="../../../assets/images/gold-start.svg" alt="">
+    </ng-container>
+    <ng-container *ngIf="!isInCart && showStars" ><img (click)="addToWishListFunction(courseId);" src="../../../assets/images/black-star.svg" alt="">
+    </ng-container>
+    <p *ngIf="showMoveToWishListText" (click)="addToWishListFunction(courseId)" >Move to wish list</p>
+    <span> <b> RS {{ displayPrice }}/-</b></span>
+    <span *ngIf="showDiscount"> <del>{{ discount === 0 || discount === null ? '-' : "Rs" + originalPrice  + "/-" }}</del> </span>
+    <button *ngIf="showAddToCart" class="large-btn" (click)="addToCartFunction(courseId)">Add To Cart</button>
+    <svg (click)="deleteFromListFunction(courseId)" *ngIf="showDelete" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><defs><style>.a{fill:none;}</style></defs><g transform="translate(-97 -436)"><g transform="translate(91 433)"><g transform="translate(9 5)"><path d="M21.463,6.778h-2.22V6.067A1.049,1.049,0,0,0,18.22,5H13.78a1.049,1.049,0,0,0-1.024,1.067v.711h-2.22a1.6,1.6,0,0,0-.171,3.182v9.973A1.049,1.049,0,0,0,11.39,21h9.22a1.049,1.049,0,0,0,1.024-1.067V9.96a1.6,1.6,0,0,0-.171-3.182Zm-8.024-.711a.35.35,0,0,1,.341-.356H18.22a.35.35,0,0,1,.341.356v.711H13.439Zm7.512,13.867a.35.35,0,0,1-.341.356H11.39a.35.35,0,0,1-.341-.356V9.978h9.9Zm.512-10.667H10.537a.89.89,0,0,1,0-1.778H21.463a.89.89,0,0,1,0,1.778Z" transform="translate(-9 -5)"/><path d="M48.358,47.231a.359.359,0,0,0,.358-.358V39.358a.358.358,0,1,0-.716,0v7.515A.359.359,0,0,0,48.358,47.231Z" transform="translate(-41.358 -33.02)"/><path d="M31.358,50.442a.359.359,0,0,0,.358-.358V44.358a.358.358,0,0,0-.716,0v5.726A.359.359,0,0,0,31.358,50.442Z" transform="translate(-27.253 -37.097)"/><path d="M65.358,50.442a.359.359,0,0,0,.358-.358V44.358a.358.358,0,0,0-.716,0v5.726A.359.359,0,0,0,65.358,50.442Z" transform="translate(-55.463 -37.097)"/></g></g></g></svg>
+   <a *ngIf="showArrow" [routerLink]="arrowLink"><img *ngIf="showArrow" src="../../../assets/images/Path-20.svg" alt=""></a>
+</div>
