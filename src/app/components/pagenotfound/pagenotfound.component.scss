@@ -1,0 +1,9 @@
+@use '../../scss/colors';
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: colors.$color-orange;
+    min-height: 500px;
+}
