@@ -10,6 +10,7 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { CoursespageComponent } from './pages/coursespage/coursespage.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { WishlistpageComponent } from './pages/wishlistpage/wishlistpage.component';
+import { MycartpageComponent } from './pages/mycartpage/mycartpage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WishlistpageComponent } from './pages/wishlistpage/wishlistpage.compone
     CourseCardComponent,
     CoursespageComponent,
     PagenotfoundComponent,
-    WishlistpageComponent
+    WishlistpageComponent,
+    MycartpageComponent
   ],
   imports: [
     BrowserModule,

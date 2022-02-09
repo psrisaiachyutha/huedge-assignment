@@ -99,9 +99,9 @@ export class WishlistpageComponent implements OnInit {
    
     let value = event.target.value;
     if(value === 'lowToHigh'){
-      this.wishList.sort((a,b) => (this.calculateDiscount(a.price,a.discount) > this.calculateDiscount(b.price,b.discount)) ? 1 : ((this.calculateDiscount(b.price,b.discount) > this.calculateDiscount(a.price,a.discount)) ? -1 : 0));
+      this.wishList.sort((a,b) => (this.calculateDiscount(a.actual_price,a.discounted_price) > this.calculateDiscount(b.actual_price,b.discounted_price)) ? 1 : ((this.calculateDiscount(b.actual_price,b.discounted_price) > this.calculateDiscount(a.actual_price,a.discounted_price)) ? -1 : 0));
     }else if(value === 'highToLow'){
-      this.wishList.sort((a,b) => (this.calculateDiscount(a.price,a.discount) < this.calculateDiscount(b.price,b.discount)) ? 1 : ((this.calculateDiscount(b.price,b.discount) < this.calculateDiscount(a.price,a.discount)) ? -1 : 0));
+      this.wishList.sort((a,b) => (this.calculateDiscount(a.actual_price,a.discounted_price) < this.calculateDiscount(b.actual_price,b.discounted_price)) ? 1 : ((this.calculateDiscount(b.actual_price,b.discounted_price) < this.calculateDiscount(a.actual_price,a.discounted_price)) ? -1 : 0));
 
     }
   }

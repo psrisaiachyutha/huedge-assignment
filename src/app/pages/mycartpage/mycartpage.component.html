@@ -1,0 +1,76 @@
+<app-banner [data]="'Shopping cart'"></app-banner>
+
+<div class="coursepage-container">
+    <div class="d-flex mg-b-1rem">
+        <main>
+            <div class="mg-b-1rem" *ngIf="cartList.length !== 0">
+                <span class="fw-bold">{{ cartList.length }} courses in Cart</span> 
+            </div>
+            <div >
+                <div *ngIf="cartList.length === 0">
+                    Add courses to cart
+                </div>
+                <app-course-card *ngFor="let course of cartList"
+                    [courseId]="course.id"  
+                    [courseTitle]="course.title"
+                    [tags]="course.tags"
+                    [courseCreater]="course.author"
+                    [isInCart]="false"
+                    [originalPrice]="course.actual_price"
+                    [discount]="course.discounted_price"
+                    [showStars]="false"
+                    [showDiscount]="false"
+                    [showDelete]="true"
+                    [showArrow]="false"
+                    [showMoveToWishListText]="true"
+                    [showAddToCart]="false"
+                    [addToCartFunction]="addToCart"
+                    [addToWishListFunction]="addToWishList"
+                    [deleteFromListFunction]="deleteFromCartList"
+                ></app-course-card>
+            </div>
+            <div class="p-2 shadow">
+                <p>Recomended courses</p>
+                <div class="card-container mt-4" *ngIf="allCourses">
+                    <!-- all cards are placed here-->
+                    <app-course-card *ngFor="let course of allCourses"
+                        [courseId]="course.id"  
+                        [courseTitle]="course.title"
+                        [tags]="course.tags"
+                        [courseCreater]="course.author"
+                        [isInCart]="false"
+                        [originalPrice]="course.actual_price"
+                        [discount]="course.discounted_price"
+                        [showStars]="false"
+                        [showDiscount]="true"
+                        [showDelete]="false"
+                        [showArrow]="true"
+                        [arrowLink]="'/detailcourse/' + course.id"
+                        [showMoveToWishListText]="false"
+                        [showAddToCart]="true"
+                        [addToCartFunction]="addToCart"
+                        [addToWishListFunction]="addToWishList"
+                        [deleteFromListFunction]="deleteFromWishList"
+                    ></app-course-card>
+                </div>
+            </div>
+        </main>
+        <aside class="hide-when-screen-small">
+            <div class="cart-details mt-4 ">
+                <!-- cart details are placed here-->
+                <p class="text-align-center">Total amount</p>
+                <hr>
+                
+                
+                <hr class="mg-t-5rem">
+                <div class=" fs-small justify-content-space-between">
+                    <p>Total Cart Value <br> <strong>Rs {{ cartAmount }}/-</strong></p>
+                    <p class="text-success">You have saved Rs{{ savedAmount | number:'1.2-2' }}/-</p>
+                </div>
+                <button class="text-white" (click)="alertCheckingOut()">checkout</button>
+
+            </div>
+        </aside>
+    </div>
+</div>
+
