@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { CoursespageComponent } from './pages/coursespage/coursespage.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { WishlistpageComponent } from './pages/wishlistpage/wishlistpage.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     FooterComponent,
     CourseCardComponent,
     CoursespageComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    WishlistpageComponent
   ],
   imports: [
     BrowserModule,

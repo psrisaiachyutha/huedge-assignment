@@ -5,14 +5,6 @@ import { CourseService } from '../../services/course.service';
   templateUrl: './coursespage.component.html',
   styleUrls: ['./coursespage.component.scss']
 })
-// export class CoursespageComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
 export class CoursespageComponent implements OnInit {
 
   allCourses : any[] = [];
@@ -90,8 +82,7 @@ export class CoursespageComponent implements OnInit {
    * 
    */
    calculateDiscount(originalCost: number , discount: number): number{
-    // console.log(originalCost * ((100 - discount)/100));
-    //return originalCost * ((100 - discount)/100);
+    
     if(discount === 0 || discount === null){
       return originalCost;
     }
@@ -171,16 +162,13 @@ export class CoursespageComponent implements OnInit {
     let value: string = event.target.value;
     value = value.toLowerCase();
     this.searchValue = value;
-    // console.log(value);
     this.searchList = [];
     for(let index = 0;index < this.allCourses.length; index++ ){
       let tags = this.allCourses[index].tags;
       let present: boolean = false;
-      // console.log(tags)
       for(let tagIndex = 0; tagIndex < tags.length ; tagIndex++){
         if(tags[tagIndex].toLowerCase().indexOf(value) !== -1){
           present = true;
-          // console.log(tags[tagIndex])
           break;
         }
       }
@@ -188,7 +176,6 @@ export class CoursespageComponent implements OnInit {
         this.searchList.push(this.allCourses[index]);
       }
     }
-    // console.log(this.searchList);
   }
 
 }

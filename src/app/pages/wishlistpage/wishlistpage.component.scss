@@ -1,0 +1,66 @@
+@use '../../scss/colors';
+
+.coursepage-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1rem;
+  }
+
+main {
+    width: 75%;
+    select {
+      padding: 0.3rem;
+      border-radius: 0.1rem;
+      border: 1px solid colors.$color-button-border;
+    }
+  }
+
+aside {
+    width: 25%;
+    float: right;
+    padding-left: 1%;
+    align-items: center;
+    input[type="text"] {
+      background-color: colors.$color-input-text-background;
+      border: 0;
+      width: 90%;
+    }
+    hr {
+      width: 95%;
+      text-align: center;
+    }
+     #search {
+      background-color: colors.$color-orange;
+      fill: colors.$color-white;
+      
+    }
+    p {
+      margin-left: 0.5rem;
+    }
+    .cart-details {
+      box-shadow: 0 0.3rem 0.4rem colors.$color-card-shadow;
+      border: 1px solid colors.$color-card-border;
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+      img {
+        margin-left: 0.2rem;
+      }
+    }
+    // img {
+    //   margin-top: 1rem;
+    // }
+  }
+
+  .shadow {
+    box-shadow: 0 0.2rem 0.1rem colors.$color-card-shadow;
+    border: 1px solid colors.$color-card-border;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+
+  
+.fs-small {
+  font-size: 0.7rem;
+}
