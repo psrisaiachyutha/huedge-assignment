@@ -1,0 +1,68 @@
+@use '../../scss/colors';
+@use  '../../scss/utils';
+
+.course-container {
+    padding:2rem;
+    min-height: utils.toRem(200);
+    background-color: colors.$color-text;
+    color: colors.$color-white;
+    margin-top: 2rem;
+}
+
+.fs-12px {
+    font-size: 12px;
+}
+.tag {
+    padding-left: 0.3rem ;
+    padding-right: 0.3rem;
+    color: colors.$color-text;
+    background-color: colors.$color-white;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    border-radius: 10%;
+}
+.text-light-orange {
+    color: #eb9234;
+}
+
+.course-details-container {
+    max-width: 30%;
+    padding: 1rem;
+    margin-left:10%;
+    border: 1px solid colors.$color-button-border;
+    font-size: 10px;
+    margin-top: 1rem;
+}
+
+.video {
+    z-index: 2;
+    position: relative;
+    top: -8rem;
+    max-width: 40%;
+    margin-left: 20%;
+    iframe {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid colors.$color-footer;
+    }
+    .course-card {
+        border:1px solid colors.$color-text;
+        padding: 0.3rem;
+        .btn-1 {
+            background-color: colors.$color-orange;
+            color: colors.$color-white;
+            border-color: transparent ;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 5%;
+        }
+        .btn-2 {
+            border: 1px solid colors.$color-orange;
+            color: colors.$color-orange;
+            background-color: colors.$color-white;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 5%;
+        }
+    }
+}

@@ -157,4 +157,33 @@ export class CourseService {
   clearCartList() {
     this.cartList = [];
   }
+
+  /**
+   * 
+   * @param courseId string to find course
+   * @returns course | false
+   */
+  checkCourseIsPresentInCart(courseId: string){
+    for(let index = 0 ; index < this.cartList.length ; index++){
+      if(this.cartList[index].id === courseId){
+        return this.cartList[index];
+      }
+    }
+    return false;
+  } 
+
+  /**
+   * 
+   * @param courseId string to find course
+   * @returns course | false
+   */
+  checkCourseIsPresentInWishList(courseId: string){
+    for(let index = 0 ; index < this.wishList.length ; index++){
+      if(this.wishList[index].id === courseId){
+        return this.wishList[index];
+      }
+    }
+    return false;
+  } 
+
 }
